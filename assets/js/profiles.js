@@ -1,11 +1,13 @@
 import { initAnchors } from './navigation.js';
-import { initContents } from './toc.js';
-import { rotateTeam } from './team.js';
+import { initContents } from './toc.js?v=2';
+import { shuffleTeam } from './team.js?v=2';
 import { initInstagram } from './media/instagram.js';
 
 const main = document.querySelector('main');
-const defaultVisible = matchMedia('(min-width: 761px)').matches;
-initContents(main, { defaultVisible });
+initContents(main);
 initAnchors();
-rotateTeam(main);
+shuffleTeam(main);
+window.addEventListener('pageshow', event => {
+  if (event.persisted) shuffleTeam(main);
+});
 initInstagram(main);
