@@ -1,7 +1,7 @@
 import { initAnchors } from './navigation.js';
 import { initContents } from './toc.js?v=2';
 import { shuffleTeam } from './team.js?v=2';
-import { initInstagram } from './media/instagram.js';
+import { initInstagram } from './media/instagram.js?v=3';
 
 const main = document.querySelector('main');
 initContents(main);
